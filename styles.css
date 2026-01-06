@@ -41,6 +41,26 @@ h3 {
     color: var(--text-primary);
 }
 
+h1, .section-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+h2, .section-subtitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+p {
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 18px;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -129,13 +149,17 @@ ul {
 
 /* Utilities */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .section {
-    padding: 5rem 0;
+    padding: 80px 0;
+}
+
+section:not(:last-child) {
+    border-bottom: 1px solid #eee;
 }
 
 .bg-light {
@@ -293,6 +317,17 @@ header {
     color: var(--text-secondary);
 }
 
+.about-section {
+    text-align: left;
+}
+
+.about-section p {
+    max-width: 750px;
+    margin-bottom: 20px;
+    line-height: 1.75;
+    color: #444;
+}
+
 /* Skills Section */
 .skills-grid {
     display: grid;
@@ -376,9 +411,10 @@ header {
 /* Projects Section */
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3.5rem;
-    color: var(--text-primary);
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
 }
 
 .projects-grid {
@@ -388,17 +424,48 @@ header {
 }
 
 .project-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2.5rem;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid #e2e8f0;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+.project-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.project-description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.project-tech li {
+    background: #eef6ff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #007acc;
+    font-weight: 600;
 }
 
 .large-card {
@@ -475,8 +542,48 @@ footer {
     opacity: 0.5;
 }
 
+.footer {
+    background: #111;
+    color: #eee;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+.footer-social a {
+    color: #4da3ff;
+    margin-left: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-social a:hover {
+    color: #82c3ff;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .about-section {
+        text-align: center;
+    }
+
     .hero-wrapper {
         flex-direction: column;
         text-align: center;
@@ -837,6 +944,28 @@ body.dark-mode .moon-icon {
     text-decoration: underline;
 }
 
+.contact-intro {
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.contact-form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.contact-form-wrapper iframe {
+    border-radius: 8px;
+}
+
 /* Blog Section */
 .blog-grid {
     display: grid;
@@ -918,6 +1047,10 @@ body.dark-mode .moon-icon {
         padding: 2rem;
     }
 
+    .contact-form-wrapper {
+        padding: 15px;
+    }
+
     .header-right {
         gap: 0.5rem;
     }
@@ -928,6 +1061,15 @@ body.dark-mode .moon-icon {
 
     .achievements-grid {
         grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-social a {
+        margin: 0 10px;
     }
 }
 
