@@ -1,9 +1,21 @@
 // Initialize AOS (Animate On Scroll)
-AOS.init({
-    once: true,
-    offset: 50,
-    duration: 800
-});
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        once: true,
+        offset: 50,
+        duration: 800
+    });
+} else {
+    console.warn('AOS library not loaded');
+    // Fallback: ensure all elements with data-aos are visible
+    document.addEventListener('DOMContentLoaded', function() {
+        const aosElements = document.querySelectorAll('[data-aos]');
+        aosElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+        });
+    });
+}
 
 // ============================================
 // Smooth Scrolling for Internal Links

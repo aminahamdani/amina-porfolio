@@ -34,6 +34,11 @@ body {
     overflow-x: hidden;
 }
 
+/* Ensure AOS elements are visible by default (fallback) */
+[data-aos] {
+    opacity: 1 !important;
+}
+
 h1,
 h2,
 h3 {
@@ -410,6 +415,12 @@ header {
 }
 
 /* Projects Section */
+.projects {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 .section-title {
     text-align: center;
     font-size: 2.4rem;
@@ -419,9 +430,11 @@ header {
 }
 
 .projects-grid {
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .project-card {
@@ -432,6 +445,27 @@ header {
     margin-bottom: 30px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid #e2e8f0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+.card-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.card-content p {
+    color: var(--text-secondary);
+    line-height: 1.7;
 }
 
 .project-card:hover {
@@ -538,9 +572,10 @@ footer {
 }
 
 .copyright {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     font-size: 0.9rem;
-    opacity: 0.5;
+    opacity: 0.6;
+    color: #ccc;
 }
 
 .footer {
@@ -552,10 +587,18 @@ footer {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
 }
 
 .footer-text {
